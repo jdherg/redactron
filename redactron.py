@@ -14,7 +14,7 @@ def redact_phrase(phrase, redactions):
     words = set(re.split('\W+', phrase))
     in_phrase = words & redactions
     for redaction in in_phrase:
-        result = re.sub('(?<=\W)' + redaction + '(?=\W)',
+        result = re.sub('\\b' + redaction + '\\b',
                         redact_word(redaction), result)
     return result
 
