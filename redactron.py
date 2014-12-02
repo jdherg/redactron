@@ -33,7 +33,7 @@ def main():
     upcase = [word for word in words if len(word) and word[0].isupper()]
     only_up = [word for word in upcase if word.lower() not in words]
     for line in lines:
-        print(redact_phrase(line, set(only_up)), file=args.output_file)
+        print(redact_phrase(line, set(only_up)), file=args.output_file, end='')
 
 if __name__ == '__main__':
     main()
